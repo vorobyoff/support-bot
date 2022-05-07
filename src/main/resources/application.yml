@@ -1,0 +1,5 @@
+telegram:
+  bot:
+    token: "5185789510:AAEBENUnLBle0bkpd1EMXbjM9E_i0YypLP4"
+    apiUrl: "https://api.telegram.org/"
+    username: "@USATUSupportBot"
