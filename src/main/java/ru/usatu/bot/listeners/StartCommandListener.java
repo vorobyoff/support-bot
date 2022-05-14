@@ -6,7 +6,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendSticker;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import ru.usatu.bot.dtos.Command;
+import ru.usatu.bot.dtos.telegram.Command;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.listeners.base.CommandListener;
 import ru.usatu.bot.mappers.api.Mapper;
@@ -14,7 +14,7 @@ import ru.usatu.bot.mappers.api.Mapper;
 import java.util.List;
 
 import static java.text.MessageFormat.format;
-import static ru.usatu.bot.dtos.CommandType.START;
+import static ru.usatu.bot.dtos.telegram.CommandType.START;
 
 @Component
 public final class StartCommandListener extends CommandListener {
@@ -39,9 +39,8 @@ public final class StartCommandListener extends CommandListener {
 
         bot.execute(SendMessage.builder()
                 .chatId(command.chatId().toString())
-                .text(format(
-                        "Привет {0}! Введи имя пользователя, указанное в системе OsTicket, что бы я смог полноценно работать.",
-                        command.user().firstName()
+                .text(format("Привет {0}! Введи id пользователя, выданное администратором системы OsTicket, " +
+                        "что бы я смог полноценно работать.", command.user().firstName()
                 )).build());
     }
 

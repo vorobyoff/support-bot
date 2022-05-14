@@ -1,4 +1,4 @@
-package ru.usatu.bot.dtos;
+package ru.usatu.bot.dtos.telegram;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +12,7 @@ import static org.springframework.util.StringUtils.hasText;
 @RequiredArgsConstructor
 public enum CommandType {
 
-    START("/start"),
-    AUTH("/auth");
+    START("/start");
 
     @Getter
     private final String text;

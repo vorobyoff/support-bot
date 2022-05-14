@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.MessageEntity;
 import org.telegram.telegrambots.meta.api.objects.User;
-import ru.usatu.bot.dtos.Command;
-import ru.usatu.bot.dtos.CommandType;
-import ru.usatu.bot.dtos.UserInfo;
+import ru.usatu.bot.dtos.telegram.Command;
+import ru.usatu.bot.dtos.telegram.CommandType;
+import ru.usatu.bot.dtos.telegram.TelegramUser;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.mappers.api.Mapper;
 
@@ -24,7 +24,7 @@ import static java.util.stream.Collectors.toCollection;
 @RequiredArgsConstructor
 public final class CommandsMapper implements Mapper<UpdateEvent, List<Command>> {
 
-    private final Mapper<User, UserInfo> userInfoMapper;
+    private final Mapper<User, TelegramUser> userInfoMapper;
 
     @Override
     public List<Command> map(UpdateEvent event) {

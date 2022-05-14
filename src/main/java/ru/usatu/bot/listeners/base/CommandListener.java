@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Message;
-import ru.usatu.bot.dtos.Command;
+import ru.usatu.bot.dtos.telegram.Command;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.mappers.api.Mapper;
 
