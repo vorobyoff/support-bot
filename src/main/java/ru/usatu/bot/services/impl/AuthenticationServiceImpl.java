@@ -3,8 +3,8 @@ package ru.usatu.bot.services.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.usatu.bot.dtos.osticket.OsTicketUsers;
-import ru.usatu.bot.dtos.osticket.OsTicketUsers.OsTicketUser;
+import ru.usatu.bot.domain.dtos.osticket.OsTicketUsers;
+import ru.usatu.bot.domain.dtos.osticket.OsTicketUsers.OsTicketUser;
 import ru.usatu.bot.services.api.AuthenticationService;
 
 import java.util.Map;

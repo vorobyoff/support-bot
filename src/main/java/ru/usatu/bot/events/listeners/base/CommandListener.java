@@ -1,10 +1,10 @@
-package ru.usatu.bot.listeners.base;
+package ru.usatu.bot.events.listeners.base;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Message;
-import ru.usatu.bot.dtos.telegram.Command;
+import ru.usatu.bot.domain.dtos.telegram.Command;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.mappers.api.Mapper;
 

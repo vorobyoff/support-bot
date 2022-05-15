@@ -1,6 +1,6 @@
 package ru.usatu.bot.services.api;
 
-import ru.usatu.bot.dtos.osticket.OsTicketUsers.OsTicketUser;
+import ru.usatu.bot.domain.dtos.osticket.OsTicketUsers.OsTicketUser;
 
 import java.util.Optional;
 

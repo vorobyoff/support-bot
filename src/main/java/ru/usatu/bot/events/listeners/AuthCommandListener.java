@@ -1,4 +1,4 @@
-package ru.usatu.bot.listeners;
+package ru.usatu.bot.events.listeners;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -9,8 +9,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.User;
 import ru.usatu.bot.domain.UserInfo;
 import ru.usatu.bot.domain.UserInfo.UserPK;
-import ru.usatu.bot.dtos.osticket.OsTicketUsers.OsTicketUser;
-import ru.usatu.bot.dtos.telegram.TelegramUser;
+import ru.usatu.bot.domain.dtos.osticket.OsTicketUsers.OsTicketUser;
+import ru.usatu.bot.domain.dtos.telegram.TelegramUser;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.mappers.api.Mapper;
 import ru.usatu.bot.repositories.UserInfoRepository;

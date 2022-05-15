@@ -1,4 +1,4 @@
-package ru.usatu.bot.dtos.telegram;
+package ru.usatu.bot.domain.dtos.telegram;
 
 import lombok.Builder;
 

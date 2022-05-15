@@ -1,4 +1,4 @@
-package ru.usatu.bot.listeners;
+package ru.usatu.bot.events.listeners;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
@@ -6,15 +6,15 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendSticker;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import ru.usatu.bot.dtos.telegram.Command;
+import ru.usatu.bot.domain.dtos.telegram.Command;
 import ru.usatu.bot.events.UpdateEvent;
-import ru.usatu.bot.listeners.base.CommandListener;
+import ru.usatu.bot.events.listeners.base.CommandListener;
 import ru.usatu.bot.mappers.api.Mapper;
 
 import java.util.List;
 
 import static java.text.MessageFormat.format;
-import static ru.usatu.bot.dtos.telegram.CommandType.START;
+import static ru.usatu.bot.domain.dtos.telegram.CommandType.START;
 
 @Component
 public final class StartCommandListener extends CommandListener {

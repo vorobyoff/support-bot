@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.MessageEntity;
 import org.telegram.telegrambots.meta.api.objects.User;
-import ru.usatu.bot.dtos.telegram.Command;
-import ru.usatu.bot.dtos.telegram.CommandType;
-import ru.usatu.bot.dtos.telegram.TelegramUser;
+import ru.usatu.bot.domain.dtos.telegram.Command;
+import ru.usatu.bot.domain.dtos.telegram.CommandType;
+import ru.usatu.bot.domain.dtos.telegram.TelegramUser;
 import ru.usatu.bot.events.UpdateEvent;
 import ru.usatu.bot.mappers.api.Mapper;
 

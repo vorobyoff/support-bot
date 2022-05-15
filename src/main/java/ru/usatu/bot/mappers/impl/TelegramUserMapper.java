@@ -2,7 +2,7 @@ package ru.usatu.bot.mappers.impl;
 
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.User;
-import ru.usatu.bot.dtos.telegram.TelegramUser;
+import ru.usatu.bot.domain.dtos.telegram.TelegramUser;
 import ru.usatu.bot.mappers.api.Mapper;
 
 import static java.util.Objects.isNull;
