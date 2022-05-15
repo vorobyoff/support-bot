@@ -1,3 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/changelog.yml
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/db/data_base
+    password: admin
+    username: admin
 telegram:
   bot:
     token: "5185789510:AAEBENUnLBle0bkpd1EMXbjM9E_i0YypLP4"

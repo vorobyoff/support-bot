@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: sadykov
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: system_name
+                  type: varchar
+              - column:
+                  name: first_name
+                  type: varchar
+              - column:
+                  name: created_at
+                  type: varchar
+              - column:
+                  name: last_name
+                  type: varchar
+              - column:
+                  name: user_name
+                  type: varchar
+              - column:
+                  name: os_ticket_id
+                  type: varchar
+              - column:
+                  name: telegram_id
+                  type: bigint
+  - changeSet:
+      id: 2
+      author: sadykov
+      changes:
+        - addNotNullConstraint:
+            columnDataType: varchar
+            columnName: os_ticket_id
+            constraintName: not_null_os_ticket_id_const
+            schemaName: public
+            tableName: user
+            validate: true
+        - addNotNullConstraint:
+            columnDataType: bigint
+            columnName: telegram_id
+            constraintName: not_null_telegram_id_const
+            schemaName: public
+            tableName: user
+            validate: true
+  - changeSet:
+      id: 3
+      author: sadykov
+      changes:
+        - addPrimaryKey:
+            columnNames: os_ticket_id, telegram_id
+            constraintName: user_pk
+            schemaName: public
+            tableName: user
+            validated: true
