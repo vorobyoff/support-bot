@@ -1,34 +1,26 @@
 package ru.usatu.bot;
 
-import lombok.AllArgsConstructor;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.objects.Update;
-import ru.usatu.bot.events.UpdateEvent;
+import org.telegram.abilitybots.api.bot.AbilityBot;
+import org.telegram.abilitybots.api.util.AbilityExtension;
 import ru.usatu.bot.poperties.TelegramBotProperties;
 
+import java.util.List;
+
 @Component
-@AllArgsConstructor
-public final class USATUSupportBot extends TelegramLongPollingBot {
+public final class USATUSupportBot extends AbilityBot {
 
     private final TelegramBotProperties botProperties;
-    private final ApplicationEventPublisher eventPublisher;
 
-    @Override
-    public String getBotUsername() {
-        return botProperties.username();
+    USATUSupportBot(TelegramBotProperties botProperties, List<AbilityExtension> extensions) {
+        super(botProperties.token(), botProperties.username());
+        this.botProperties = botProperties;
+        addExtensions(extensions);
     }
 
     @Override
-    public String getBotToken() {
-        return botProperties.token();
-    }
-
-    @Override
-    public void onUpdateReceived(Update update) {
-        UpdateEvent updateEvent = new UpdateEvent(update);
-        eventPublisher.publishEvent(updateEvent);
+    public long creatorId() {
+        return botProperties.creatorId();
     }
 
 }

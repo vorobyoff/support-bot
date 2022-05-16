@@ -5,5 +5,5 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 
 @ConstructorBinding
 @ConfigurationProperties("telegram.bot")
-public record TelegramBotProperties(String token, String apiUrl, String username) {
+public record TelegramBotProperties(String token, String username, long creatorId) {
 }

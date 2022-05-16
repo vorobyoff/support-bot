@@ -27,9 +27,9 @@ public class UserInfo {
     private String lastName;
     private String userName;
 
+    @Data
     @Builder
     @Embeddable
-    @EqualsAndHashCode
     @NoArgsConstructor(access = PROTECTED)
     @AllArgsConstructor(access = PROTECTED)
     public static class UserPK implements Serializable {

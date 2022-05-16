@@ -12,7 +12,8 @@ import static org.springframework.util.StringUtils.hasText;
 @RequiredArgsConstructor
 public enum CommandType {
 
-    START("/start");
+    START("start"),
+    AUTH("auth");
 
     @Getter
     private final String text;
