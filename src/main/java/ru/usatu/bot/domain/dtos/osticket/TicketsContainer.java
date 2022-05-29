@@ -1,4 +1,3 @@
-
 package ru.usatu.bot.domain.dtos.osticket;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

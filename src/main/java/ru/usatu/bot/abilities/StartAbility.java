@@ -21,6 +21,7 @@ import static ru.usatu.bot.domain.dtos.telegram.CommandType.START;
 public final class StartAbility implements AbilityExtension {
 
     private static final InputFile STICKER = new InputFile("CAACAgIAAxkBAAEErPRidqr-GJExJkWzOovKMIR9pAF8MgACMAEAAqtXxAtP62N9ym6CbyQE");
+
     private static final String GREETING = """
             Привет **{0}**!
             Введи команду */auth [OsTicketUserId]*

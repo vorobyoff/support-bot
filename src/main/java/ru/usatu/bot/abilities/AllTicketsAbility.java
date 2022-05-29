@@ -2,6 +2,8 @@ package ru.usatu.bot.abilities;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.telegram.abilitybots.api.objects.Ability;
@@ -17,9 +19,12 @@ import ru.usatu.bot.repositories.UserInfoRepository;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
+import static java.nio.charset.StandardCharsets.UTF_16;
 import static java.util.Collections.emptyList;
+import static java.util.Collections.singletonList;
+import static org.springframework.http.HttpMethod.POST;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @Component
 @RequiredArgsConstructor
@@ -52,8 +57,12 @@ public final class AllTicketsAbility implements AbilityExtension {
     }
 
     private List<Ticket> findAllTickets(UserInfo userInfo) {
-        var result = restTemplate.getForEntity("http://thisbot.ru/ost_wbs/?apikey={apikey}&query=ticket&condition=all&sort=status&parameters={statusId}",
-                Tickets.class, Map.of("apikey", "AB5F9CB3B226E2F3667581C77CAB87DC", "statusId", 0));
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(singletonList(APPLICATION_JSON));
+        headers.setAcceptCharset(singletonList(UTF_16));
+        headers.setContentType(APPLICATION_JSON);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        var result = restTemplate.exchange("https://thisbot.ru/ost_wbs/?apikey=AB5F9CB3B226E2F3667581C77CAB87DC&query=ticket&condition=all&sort=status&parameters=0", POST, entity, Tickets.class);
         if (!result.hasBody()) return emptyList();
         var body = result.getBody();
         assert body != null;
